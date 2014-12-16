@@ -2,7 +2,7 @@ baseurl = "http://ShevaXu.github.io"
 languageCode = "en-us"
 title = "The Space of Sheva"
 
-# disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
+disqusShortname = "shevaxugithubio" # Optional, enable Disqus integration
 MetaDataFormat = "toml"
 
 [author]
@@ -40,11 +40,11 @@ MetaDataFormat = "toml"
     # Metadata used to drive integrations.
     googleAuthorship = ""
     googleAnalytics = ""
-    gravatarHash = ""
+    gravatarHash = "a0a34dab03b94d1ab0e785aba0061c91"
 
     # Sidebar social links, avoid enabling too many of these if possible.
     # These should be full URLs.
-    github = ""
+    github = "https://github.com/ShevaXu"
     linkedin = ""
     googleplus = ""
     facebook = ""
