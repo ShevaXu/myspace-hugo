@@ -1,0 +1,35 @@
+<div class="px-video-container" id="pxvid">
+	<div class="px-video-img-captions-container">
+		<div class="px-video-captions hide"></div>
+		<video width="640" height="360" {{ with .Get "poster" }} poster="{{ . }}" {{ end }} controls>
+			<!-- video files -->
+			{{ with .Get "src" }}
+			<source src="{{ . }}.mp4" type="video/mp4" />
+			<source src="{{ . }}.webm" type="video/webm" /> 
+			{{ end}}
+			<!-- text track file -->
+			{{ with .Get "vtt" }}
+			<track kind="captions" label="English captions" src="{{ . }}" srclang="en" default /> 
+			{{ end }}
+			<!-- fallback for browsers that don't support the video element -->
+			<div>
+				<a {{ with .Get "src" }} href="{{ . }}.mp4" {{ end }}>
+					{{ with .Get "poster" }} <img src="{{ . }}" width="640" height="360" alt="download video" /> {{ end }}					
+				</a>
+			</div>
+		</video>
+	</div>
+	<!-- end container for captions and video -->
+	<div class="px-video-controls"></div>
+</div>
+<!-- end video container -->
+
+<script src="http://paypal.github.io/accessible-html5-video-player/js/px-video.js"></script>
+
+<script>
+	// Initialize
+	new InitPxVideo({
+		"videoId": "pxvid",
+		"captionsOnDefault": true,
+	});
+</script>

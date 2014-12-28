@@ -2,7 +2,7 @@ baseurl = "http://ShevaXu.github.io"
 languageCode = "en-us"
 title = "The Space of Sheva"
 
-disqusShortname = "shevaxugithubio" # Optional, enable Disqus integration
+# disqusShortname = "shevaxugithubio" # Optional, enable Disqus integration
 MetaDataFormat = "toml"
 
 [author]
@@ -33,7 +33,7 @@ MetaDataFormat = "toml"
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
-    highlight = "sunburst"
+    highlight = "github"
 
     # Displays under the author name in the sidebar, keep it short.
     tagline = "That's not the shape of my heart."

@@ -1,0 +1,33 @@
+{{ partial "head.html" . }}
+
+<!--<div class="content container">
+	<ul class="posts">
+		{{ range .Data.Pages }}
+		<li><a href="{{ .Permalink }}">{{ .Title }}</a> {{ if isset .Params "categories" }} &middot; {{ $baseUrl := .Site.BaseUrl }} {{ range .Params.categories }}<a class="label" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }} {{ end }}</span>
+			&middot;
+			<time>{{ .Date.Format "Jan 2, 2006" }}</time>
+		</li>
+		{{ end }}
+	</ul>
+</div>-->
+
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {{ range .Data.Pages }}
+			{{ if eq .Section "post" }}
+			{{ .Render "summary" }}
+			{{ end }}
+		{{ end }}
+                
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+{{ partial "footer.html" . }}

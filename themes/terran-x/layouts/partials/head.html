@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="{{ if ne .Description " " }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+		<meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
+
+		<title>{{ .Title }}</title>
+
+		<!-- local CSS -->
+		<link href="{{ .Site.BaseUrl }}/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/clean-blog.min.css">	
+		{{ if isset .Site.Params "highlight" }}
+		<link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/{{ .Site.Params.highlight }}.css"> 
+		{{ end }}
+		<!-- online CSS -->
+		<link rel="stylesheet" href="http://paypal.github.io/accessible-html5-video-player/css/px-video.css" />
+		<link href="http://vjs.zencdn.net/4.10/video-js.css" rel="stylesheet">
+		<!-- Custom Fonts -->
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- my own custom CSS at last -->
+		<!--<link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/terran.css">-->
+		
+		<!-- Icons -->
+		<link href="/favicon.png" rel="icon">
+	</head>
+
+	<body>
+
+		<!-- below in footer.html -->
+		<!--</body>
+</html>-->

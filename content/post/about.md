@@ -2,15 +2,16 @@
 date = "2014-12-13T16:46:18+08:00"
 draft = false
 title = "About this space"
+subtitle = "subtitle"
 categories = ["Thoughts", "Development"]
 tags = ["Hello world", "about"]
 +++
 
-## Hello world!
-
-As a programmer, *Hellow world!* is the most familiar way to start a new advanture. 
+As a programmer, *Hello world!* is the most familiar way to start a new advanture. 
 
 So, since it's my first ever blog, or more precisely a space, I would like to state what I expect from building it.
+
+<!--more-->
 
 ### A notebook online
 

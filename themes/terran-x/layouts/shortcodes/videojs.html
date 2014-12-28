@@ -1,0 +1,15 @@
+<script src="http://vjs.zencdn.net/4.10/video.js"></script>
+<!-- The video -->
+<video class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" {{ with .Get "poster" }} poster="{{ . }}" {{ end }} data-setup='{}'>
+	{{ with .Get "src" }}
+	<source src="{{ . }}.mp4" type="video/mp4" />
+	<source src="{{ . }}.webm" type="video/webm" /> 
+	{{ end}}
+	{{ with .Get "vtt" }}
+	<track kind="captions" label="English" src="{{ . }}" srclang="en" default /> 
+	{{ end }}
+	<!-- <track kind="captions" src="http://example.com/path/to/captions.vtt" srclang="en" label="English" default> -->
+	<p class="vjs-no-js">
+		To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+	</p>
+</video>

@@ -2,6 +2,7 @@
 date = "2014-12-23T22:19:47+08:00"
 draft = false
 title = "Embracing videos with Html5"
+subtitle = "subtitle"
 categories = ["Technology", "Development"]
 tags = ["html5", "video", "javascript"]
 +++
@@ -16,6 +17,8 @@ HTML5 comes with the *video* element. Here's its usage:
 	Your browser does not support the video tag.
 </video>
 ```
+
+<!--more-->
 
 And that's what it looks like:
 

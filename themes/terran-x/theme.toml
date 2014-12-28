@@ -1,0 +1,11 @@
+name = "Terran-X"
+
+description = ""
+license = "MIT"
+source_repo = ""
+tags = ["blog", "technical", "personal"]
+features = ["blog", "technical", "personal"]
+
+[author]
+    name = "Sheva Xu"
+    homepage = "https://shevaxu.github.io"
