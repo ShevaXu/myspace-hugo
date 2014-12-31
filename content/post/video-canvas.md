@@ -4,4 +4,3 @@ draft = true
 title = "Manipulate Video and Canvas"
 
 +++
-

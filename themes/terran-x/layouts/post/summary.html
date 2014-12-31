@@ -1,32 +1,27 @@
-<!--<article class="post">
-	<header>
-		<h1 class="post-title">
-        		<a href="{{ .Permalink }}">{{ .Title }}</a>
-      	</h1>
-		<span class="post-date">{{ .Date.Format "Jan 2, 2006" }} &middot; Read in {{ .ReadingTime }} minute
-			{{ if .Site.DisqusShortname }} &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a> {{ end }}
-      		{{ if isset .Params "categories" }}
-      		<br/>
-	     	{{ $baseUrl := .Site.BaseUrl }}
-	      	{{ range .Params.categories }}<a class="label" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}		      	{{ end }}
-		</span>
-	</header>
-
-	{{ .Summary }}
-	<footer>
-		<a href="{{ .Permalink }}">Read On &rarr;</a>
-	</footer>
-</article>-->
-
 <div class="post-preview">
 	<a href="{{ .Permalink }}">
-		<h2 class="post-title">{{ .Title }}</h2>		
+		<h2 class="post-title">{{ .Title }}</h2>
 	</a>
 	{{ if isset .Params "subtitle" }}
 	<h3 class="post-subtitle">
+
 		{{ .Params.subtitle }}
-	</h3>
-	{{ end }}
+
+	</h3> {{ end }}
+	<span> 
+		{{ if isset .Params "categories" }} 
+		<i class="fa fa-sitemap"></i>
+		{{ $baseUrl := .Site.BaseUrl }}
+		{{ range .Params.categories }} <a class="label label-summary" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a> {{ end }}
+		&nbsp; &nbsp;
+		{{ end }}
+		{{ if isset .Params "tags" }}
+		<i class="fa fa-tags"></i>
+		{{ $baseUrl := .Site.BaseUrl }}
+		{{ range .Params.tags }} <a class="label label-summary" href="{{ $baseUrl }}/tags/{{ . | urlize }}">{{ . }}</a> {{ end }}
+		{{ end }}
+	</span>
 	<p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} &middot; Read in {{ .ReadingTime }} minute</p>
+
 </div>
 <hr>

@@ -1,46 +1,59 @@
 {{ partial "head.html" . }}
-{{ partial "header.html" . }}
+{{ partial "topbar.html" . }}
 
-<!--<div class="content container">
-  <div class="post">
-    <h1>{{ .Title }}</h1>
-    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }} &middot; Read in {{ .ReadingTime }} minute {{ if .Site.DisqusShortname }} &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
-    {{ if isset .Params "categories" }}
-    <br/>
-    {{ $baseUrl := .Site.BaseUrl }}
-    {{ range .Params.categories }}<a class="label" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-    {{ end }}</span>
-    {{ .Content }}
-  </div>
-  {{ if .Site.DisqusShortname }}<div id="disqus_thread"></div>{{ end }}
-</div>-->
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ .Site.BaseUrl }}/img/post-bg.png')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="post-heading">
+					<h1>{{ .Title }}</h1> 
+					{{ if isset .Params "subtitle" }}
+					<h2 class="subheading">{{ .Params.subtitle }}</h2> 
+					{{ end }}
+					<span class="meta">
+						{{ .Date.Format "Jan 2, 2006" }} 
+						{{ if isset .Params "categories" }}
+						&nbsp; &nbsp; 
+						<i class="fa fa-sitemap"></i>
+						{{ $baseUrl := .Site.BaseUrl }}
+						{{ range .Params.categories }} <a class="label" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a> {{ end }}
+						{{ end }}
+						{{ if isset .Params "tags" }}
+						&nbsp; &nbsp; 
+						<i class="fa fa-tags"></i>
+						{{ $baseUrl := .Site.BaseUrl }}
+						{{ range .Params.tags }} <a class="label" href="{{ $baseUrl }}/tags/{{ . | urlize }}">{{ . }}</a> {{ end }}
+						{{ end }}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 
 <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                	<!--<span class="post-meta">{{ .Date.Format "Jan 2, 2006" }} &middot; Read in {{ .ReadingTime }} minute {{ if .Site.DisqusShortname }} &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
-    {{ if isset .Params "categories" }}
-    <br/>
-    {{ $baseUrl := .Site.BaseUrl }}
-    {{ range .Params.categories }}<a class="label" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-    {{ end }}</span>-->
-    {{ .Content }}
-                </div>
-            </div>
-            {{ if .Site.DisqusShortname }}<div id="disqus_thread"></div>{{ end }}
-        </div>
-    </article>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				{{ .Content }}
+			</div>
+		</div>
+		{{ if .Site.DisqusShortname }}
+		<div id="disqus_thread"></div>
+		{{ end }}
+	</div>
+</article>
 
 {{ with .Site.DisqusShortname }}
 <script type="text/javascript">
-var disqus_shortname = {{ . }};
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
+	var disqus_shortname = {{ . }};
+	(function () {
+	    var s = document.createElement('script'); s.async = true;
+	    s.type = 'text/javascript';
+	    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
 </script>
 {{ end }}
 
@@ -57,6 +70,5 @@ var disqus_shortname = {{ . }};
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 {{ end }}
 
-<hr>
-
 {{ partial "footer.html" . }}
+{{ partial "foot.html" . }}

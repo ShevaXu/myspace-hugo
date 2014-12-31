@@ -33,26 +33,3 @@
 	</div>
 	<!-- /.container -->
 </nav>
-
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('{{ .Site.BaseUrl }}/img/post-bg.jpg')">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<div class="post-heading">
-					<h1>{{ .Title }}</h1> 
-					{{ if isset .Params "subtitle" }}
-					<h2 class="subheading">{{ .Params.subtitle }}</h2> 
-					{{ end }}
-					<span class="meta">{{ .Date.Format "Jan 2, 2006" }} 
-						{{ if isset .Params "categories" }}
-						<br/>{{ $baseUrl := .Site.BaseUrl }}
-						{{ range .Params.categories }}<a class="label" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-						{{ end }}
-					</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
